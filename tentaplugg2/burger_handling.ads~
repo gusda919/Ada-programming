@@ -1,0 +1,20 @@
+with Ada.Integer_Text_IO, Ada.Text_IO, Ada.Float_Text_IO;
+use Ada.Integer_Text_IO, Ada.Text_IO, Ada.Float_Text_IO;
+
+package Hero_Handling is
+
+
+   
+   type Hero_Type is private;
+   
+   procedure Get(hero : out Hero_Type);
+   procedure Put(hero : in Hero_Type);
+   Is_Breakfast_burger(hero : in Hero_Type) return Integer;
+   
+   
+private
+   
+   
+    
+    
+    end Hero_Handling;

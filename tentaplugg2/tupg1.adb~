@@ -1,0 +1,57 @@
+with Ada.Text_IO;		use Ada.Text_IO;
+with Ada.Integer_Text_IO;	use Ada.Integer_Text_IO;
+
+
+
+
+
+
+procedure Tupg1 is
+   
+   type Order_String is array(1..8) of Character ;
+   type String_Array is array(1..8) of Order_String;
+   
+   
+   
+   
+   
+   
+   
+   function Trim(S : in String) return String is
+begin
+   if S(S'Last) /= ' ' or S'First = S'Last then
+      return S;
+   end if;
+   return Trim(S(S'First..S'Last-1));
+end Trim;
+
+      
+Order : Order_String; 
+orders : String_Array:=("Cheese  ","Tomato  ","Onion   ","Pickle  ","Bacon   ","Dressing","Ketchup ","Mustard ");
+  
+begin 
+   
+   
+   
+   for I in  Orders'Range loop 
+      
+      
+      Put("Do you want ");
+      
+      for J in order'range loop
+	 
+	Put(Order);
+	  
+	     end loop ;  
+      Put(" ? ");
+   end loop;
+   
+    
+	
+	
+	 
+	    
+	    
+
+   
+   end Tupg1;

@@ -1,0 +1,64 @@
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO;  use  Ada.Float_Text_IO;
+with Ada.Numerics;       use  Ada.Numerics;
+with Ada.Numerics.Elementary_Functions;  use Ada.Numerics.Elementary_Functions;
+
+procedure sinuskurva is
+   
+   
+ 
+   
+   
+   
+   
+   Start_Value, Step , End_Value : Integer;
+  
+   
+   Radian : Float;
+  
+   begin
+   
+ --  Create(F1, In_File, "SINUS.TXT");
+      Put("Mata in startvärde, steglängd och slutvärde: ");
+      Get(Start_Value);
+      Get(Step);
+      Get(End_Value);
+   
+   Put("           Grad Radian Kurva");
+   New_Line;
+   
+   
+   for I in 1..(End_Value/step)+1 loop
+      
+      Put(Start_Value);
+      Radian:= (Float(Start_Value) *(PI/180.00));  
+      Put(Radian,Fore=>2,Aft=>3,Exp=>0);
+      
+      
+      
+      
+      
+      
+      
+      
+      Start_Value:= Start_Value + Step;
+      New_Line;
+   
+      
+     end loop; 
+      
+     
+--   while not End_Of_File(F1) loop(
+    
+      
+      -- 
+   
+     
+      
+      
+      
+--   end loop;
+    --  Close(F1);
+    
+      end sinuskurva;

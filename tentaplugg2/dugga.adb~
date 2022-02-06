@@ -1,0 +1,39 @@
+with Ada.Integer_Text_IO, Ada.Text_IO, Ada.Float_Text_IO, Ada.Numerics.Elementary_Functions, Ada.numerics ;
+use Ada.Integer_Text_IO, Ada.Text_IO, Ada.Float_Text_IO, Ada.Numerics.Elementary_Functions, Ada.Numeric;
+
+
+procedure Dugga is 
+   
+   
+   
+   
+   
+   
+  function  Get_Temperature (Day, hour : in out intger) is 
+      
+     
+   begin
+      
+
+	 
+   
+   end  Get_Temperature;
+   
+   
+   
+   
+   Day, Hour : Integer;
+   
+   
+  begin
+   
+   
+   
+   
+   
+   
+   
+   end Dugga;
+
+
+        

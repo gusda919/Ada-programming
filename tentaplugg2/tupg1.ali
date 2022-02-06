@@ -1,0 +1,67 @@
+V "GNAT Lib v7"
+M P W=b
+P ZX
+
+RN
+RV NO_IO
+RV SPARK_05
+
+U tupg1%b		tupg1.adb		6ddb7e3d NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+D ada.ads		20170106103348 76789da1 ada%s
+D a-except.ads		20151016123252 291912d5 ada.exceptions%s
+D a-inteio.ads		20070406091342 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20140225151544 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20141120112812 119b8fb3 ada.streams%s
+D a-tags.ads		20151016130316 01f5e3ef ada.tags%s
+D a-textio.ads		20140717063745 386df5d4 ada.text_io%s
+D a-tiinio.ads		20140717063513 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20170106103348 31484697 ada.unchecked_conversion%s
+D interfac.ads		20160502101001 5ab55268 interfaces%s
+D i-cstrea.ads		20140801100435 e53d8b8e interfaces.c_streams%s
+D system.ads		20170510173650 4635ec04 system%s
+D s-crtl.ads		20141120112812 0ebbdb71 system.crtl%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-ficobl.ads		20140718105747 078245e4 system.file_control_block%s
+D s-parame.ads		20140801093848 7e2a0d7f system.parameters%s
+D s-soflin.ads		20151020124036 14e1eb6c system.soft_links%s
+D s-stache.ads		20140225151139 a37c21ec system.stack_checking%s
+D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
+D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
+D s-traent.ads		20140730135025 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20140718092328 1b7d22d2 system.wch_con%s
+D tupg1.adb		20210104092302 a3fd024d tupg1%b
+X 1 ada.ads
+16K9*Ada 20e8 24|1r6 1r37 2r6 2r37
+X 3 a-inteio.ads
+18K13*Integer_Text_IO[8|46] 24|2w10 2r41
+X 7 a-textio.ads
+49K13*Text_IO 471e16 24|1w10 1r41
+166U14*New_Line 24|65s7
+206U14*Get 24|60s7
+208U14*Put 24|20s10
+242U14*Put 24|57s7 59s7 68s9
+X 8 a-tiinio.ads
+66U14*Put 24|69s9[3|18]
+X 24 tupg1.adb
+6U11*Tupg1 6b11 76l8 76t13
+8A9 Order_String(character)<integer> 9r40 12r33
+9A9 String_Array(8A9)<integer> 46r13
+12U14 Put_text 12b14 12>24 24l8 24t16 58s7
+12a24 Var{8A9} 18r16 20r14
+18i11 I{integer} 20r18
+27V13 Generate{integer} 27b13 27=22 40l8 40t16 63s31
+27i22 var{integer} 34r17
+30i6 Code{integer} 36m5 36r11 39r12
+34i9 I{integer}
+46a4 orders{9A9} 54r14 58r16
+47i4 Index{integer} 56m7 62m10 63m40 63r40
+47i11 Sum_code{integer} 52m4 63m10 63r20 69r13
+48e4 Char{character} 60m11 61r10
+54i8 I{integer} 58r23 62r18
+
