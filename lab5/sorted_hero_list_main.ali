@@ -1,0 +1,79 @@
+V "GNAT Lib v7"
+M P W=b
+P ZX
+
+RN
+RV NO_IO
+RV NO_DEFAULT_INITIALIZATION
+RV SPARK_05
+
+U sorted_hero_list_main%b  sorted_hero_list_main.adb  ec236e6c NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W hero_handling%s	hero_handling.adb	hero_handling.ali
+W sorted_hero_list%s	sorted_hero_list.adb	sorted_hero_list.ali
+W string_handling%s	string_handling.adb	string_handling.ali
+
+D ada.ads		20170106103348 76789da1 ada%s
+D a-except.ads		20151016123252 291912d5 ada.exceptions%s
+D a-flteio.ads		20070406091342 e18a47a0 ada.float_text_io%s
+D a-inteio.ads		20070406091342 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20140225151544 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20141120112812 119b8fb3 ada.streams%s
+D a-tags.ads		20151016130316 01f5e3ef ada.tags%s
+D a-textio.ads		20140717063745 386df5d4 ada.text_io%s
+D a-tiflio.ads		20140717063513 56fbda09 ada.text_io.float_io%s
+D a-tiinio.ads		20140717063513 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20170106103348 31484697 ada.unchecked_conversion%s
+D a-uncdea.ads		20070406091342 f15a5ed1 ada.unchecked_deallocation%s
+D hero_handling.ads	20191126123049 30ad40ab hero_handling%s
+D interfac.ads		20160502101001 5ab55268 interfaces%s
+D i-cstrea.ads		20140801100435 e53d8b8e interfaces.c_streams%s
+D sorted_hero_list.ads	20191126121638 a7a6681a sorted_hero_list%s
+D sorted_hero_list_main.adb  20191126175848 71862e9b sorted_hero_list_main%b
+D string_handling.ads	20191126175529 25025396 string_handling%s
+D system.ads		20170510173650 4635ec04 system%s
+D s-crtl.ads		20141120112812 0ebbdb71 system.crtl%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-ficobl.ads		20140718105747 078245e4 system.file_control_block%s
+D s-parame.ads		20140801093848 7e2a0d7f system.parameters%s
+D s-soflin.ads		20151020124036 14e1eb6c system.soft_links%s
+D s-stache.ads		20140225151139 a37c21ec system.stack_checking%s
+D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
+D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
+D s-traent.ads		20140730135025 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20140718092328 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 17|1r6 1r23 2r6 2r31 3r6 3r29
+X 3 a-flteio.ads
+20K13*Float_Text_IO[9|46] 17|3w10 3r33
+X 4 a-inteio.ads
+18K13*Integer_Text_IO[10|46] 17|2w10 2r35
+X 8 a-textio.ads
+49K13*Text_IO 471e16 17|1w10 1r27
+X 10 a-tiinio.ads
+66U14*Put 17|26s4[4|18]
+X 13 hero_handling.ads
+4K9*Hero_Handling 27e22 17|5w6 5r25
+8R9*Hero_Type 25e17 17|12r21
+10U14*Get_hero 17|18s4 19s4
+X 16 sorted_hero_list.ads
+8K9*Sorted_Hero_list 39e24 17|4w6 4r28
+11P9*Pekare 17|13r17
+19V13*Length{integer} 17|26s8
+22U14*Insert 17|20s4 21s4
+23U14*Remove 17|23s4
+24U14*Delete 17|25s4
+25U14*Put_List 17|22s4 24s4
+X 17 sorted_hero_list_main.adb
+7U11*Sorted_Hero_list_Main 7b11 28l8 28t29
+12r7 Hero1{13|8R9} 18m13 20r19
+12r13 hero2{13|8R9} 19m13 21r19
+13p7 Pointer{16|11P9} 20m11 20r11 21m11 21r11 22r13 23m11 23r11 24r13 25m11
+. 25r11 26r15
+X 18 string_handling.ads
+1K9*String_Handling 17|6w6 6r27 18|21e20
+

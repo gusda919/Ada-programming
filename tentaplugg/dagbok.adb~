@@ -1,0 +1,66 @@
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO;   use Ada.Float_Text_IO;
+
+procedure Dagbok is
+    
+   procedure Get_Weather ( Snowy_Days,Normal_Days : out Float ; Snow, No_snow : out String ; X, Y : out integer) is
+      
+      C : Character;
+      I,N : Integer;
+      Index_Snow,Index_No_Snow : Integer;
+      weather1,weather2 : String (1..256);
+      
+   begin
+      I:=0;
+      N:=0;
+      Index_Snow:=1;
+      Index_No_Snow:=1;
+      
+     while not End_Of_Line loop
+      Get(C);
+      if C=('*') then
+         weather1(Index_Snow):=C;
+	 I:=I+1;
+	 Index_Snow:= Index_Snow+1;
+      elsif C=('-') then
+	 N:=N+1;
+	 weather2(Index_No_Snow):=C;
+	 Index_No_Snow:=Index_No_Snow+1;
+	 	 
+      end if;
+    
+      end loop;
+ 
+      Snowy_Days:=Float(I);
+      Normal_Days:=Float(N);
+      Snow:=weather1;
+      No_Snow:=weather2;
+ --     X:=I;
+  --    Y:=N;
+      
+      
+      
+      
+   end Get_Weather;
+   
+  Snowy_Days,Normal_Days : float;
+  
+ Snow,No_snow: String(1..256);
+  X,Y : Integer;
+ 
+begin
+   Put("Mata in dagar: ");
+   Get_Weather(Snowy_Days,Normal_Days,Snow,No_Snow,X,Y);
+   Put(Snow(1..Integer(Snowy_days));
+   Put(No_Snow(1..Integer(Normal_days));
+   New_Line;
+   Put("Det har varit ");
+   Snowy_days:=Snowy_Days/(Snowy_Days+Normal_Days);
+   Put((Snowy_Days * 100.00),fore=>0,Aft=>1,Exp=>0);
+   Put("% Snöiga dagar.");
+   
+   
+   
+   
+   end Dagbok;

@@ -1,0 +1,146 @@
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_text_IO; use Ada.Float_Text_IO;
+with Ada.IO_Exceptions;     
+
+
+procedure Klass is
+   
+   X,Y,B,Z,F : Float;
+   
+   
+   
+  
+   
+   
+begin
+   
+     Put("Första pris: ");
+     loop
+	begin
+	   Get(X);
+	   while X<0.00 loop
+	      Put("Priset ska vara positivt");
+	      New_Line;
+	      Put("Första pris: ");
+	      Get(X);
+	      end loop;
+	   
+	   exit;
+	   
+	   
+	exception
+	   when Data_Error=>
+	      Put_Line("FEL datatyp");
+	      Skip_Line;
+	      Put(" Mata in rätt datatyp: ");
+	end;
+	end loop;
+    
+   Put("Sista pris: ");
+   
+   
+   loop
+      
+      begin
+	 Get(Y);
+	 
+	   while X>=Y loop
+	 
+	 
+	 Put("Sista priset måste vara större än första priset ");
+	 New_Line;
+	     Put("Första pris: ");
+	     Get(X);
+	     Put("sista priset; ");
+         Get(Y);
+
+      end loop;
+
+	 
+	 exit;
+   	exception
+	   when Data_Error=>
+	      Put_Line("FEL datatyp");
+	      Skip_Line;
+	      Put(" Mata in rätt datatyp: ");
+	end;
+	end loop;
+  
+
+   
+   
+   Put("steg: ");
+   
+   loop
+      begin
+   
+	 Get(B); 
+	   while B<=0.00 loop
+   	 
+     	 Put("steglängden får inte vara  mindre än noll");
+   New_Line;
+   Put("steglängd: ");
+   Get(B);
+      end loop;
+ 
+	 	 exit;
+   	exception
+	   when Data_Error=>
+	      Put_Line("FEL datatyp");
+	      Skip_Line;
+	      Put(" Mata in rätt datatyp: ");
+	end;
+	end loop;
+  
+	   
+ 
+   
+	 Put("Momsprocent: ");
+       loop
+	 begin
+	    Get(z);
+	    
+	  while Z<0.00 or Z>100.00 loop
+	 Put("momsprocent har ett felaktigt värde");
+	 New_Line;
+	 Put("Momsprocent: ");
+         Get(z);
+	    end loop;
+
+	    
+	    exit;
+	    	exception
+	   when Data_Error=>
+	      Put_Line("FEL datatyp");
+	      Skip_Line;
+	      Put(" Mata in rätt datatyp: ");
+	end;
+	end loop;
+  
+   
+
+
+   
+   -- X=första pris, Z=momsprocent, F=moms. Y=sista pris
+   loop
+     Put("   "); 
+   Put(pris1,Fore=>4,Aft=>2,Exp=>0);
+      F:=X*(f4/100.00);
+      Put("   ");
+    Put(Pris1*(Moms/100.00),Fore=>4,Aft=>2,Exp=>0);
+     Put("   ");
+    Put(f1+F,Fore=>4,Aft=>2,Exp=>0);
+      pris1:=pris1+Steg;
+      
+      New_Line;
+
+      exit when Pris1>pris2 ;
+   end loop;
+
+   New_Line;
+   New_Line;
+   
+   
+   
+end Klass;

@@ -1,0 +1,65 @@
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+
+procedure Shoesize is
+   
+   procedure Print_dashes(y, x : in Float) is
+      
+      I: Integer;
+      Over,under : Float;
+   begin
+      Over:=Y;
+      Under:=X;
+  
+      I:=Integer(Float'Floor(Over-Under)*2.00);
+      
+      for K in 0..I loop
+	 Put("---+");
+	 
+	 end loop;
+   
+   end Print_Dashes;
+   procedure Put_Sizes(Y ,X : in Float) is
+    
+      Over,under : Float;
+   begin
+      Over:=Y;
+      Under:=X;
+      
+      
+      while Under<=Over loop
+	 
+	 if Float'Floor(Under) /= under then
+	    
+	    Put(Under,Fore=>0,Aft=>0,Exp=>0);
+	    else 
+	 Put(Integer(Float'Floor(Under)),Width=>2);
+	 end if;
+	 Put(" ");
+	 Under:=Under+0.5;
+	
+
+	 exit when Under>Over;	 
+      end loop;
+      end Put_Sizes;
+     Over,Under : Float;
+   
+begin
+   
+   
+   Put("Mata in under gräns: ");
+   Get(Under);
+   Put("Mata in övre gräns: ");
+   Get(Over);
+   Print_Dashes(Over,Under);
+   New_Line;
+   Put_Sizes(Over,Under);
+   New_Line;
+   Print_Dashes(Over,Under);
+   
+   
+   
+end Shoesize;
+
+   

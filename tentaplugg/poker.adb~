@@ -1,0 +1,63 @@
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_Io; Use Ada.Integer_Text_Io;
+
+
+procedure Poker2 is
+   
+   type FV_Type is 
+     array (1..6) of Integer;
+     
+   
+   Chips : Integer;
+   Ganger : Integer;
+   Rest : Integer;
+   
+   
+   procedure Get(FV : out  FV_Type) is
+   begin 
+      for I in 1..6 loop
+	 Get(FV(I));
+	 
+      end loop;
+      
+      end Get;
+   
+   procedure Dela (FV : in out FV_type) is
+      
+      Counter : Integer;
+      
+	
+   begin
+      
+      Ganger:=Chips/Fv(1); -- 6
+      Counter:=Ganger*FV(1); -- 1200
+     -- Rest:=Chips rem Fv(1); -- 34
+      
+      Rest:=Chips-Ganger;
+      
+      
+	
+     -- Put("Hej");
+      
+   end Dela;
+     
+   
+   FV : FV_Type;
+begin
+   
+   
+   Put("Mata in totalt antal chips: ");
+   Get(Chips);
+   
+   Put("Mata in värden på färger (från störst till minst): ");
+   Get(FV);
+   Put("Du får: ");
+   Put(Chips/FV(1), Width => 1);
+   Put("st");
+   Put(Fv(1), Width => 4);
+   Put("-marker");
+   Dela(FV);
+   
+   
+   
+  end Poker2;

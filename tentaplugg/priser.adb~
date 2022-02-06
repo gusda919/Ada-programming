@@ -1,0 +1,42 @@
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+
+
+procedure Priser is
+   type Price_Type is record
+      Belopp: Integer;
+      Val : String(1..3);
+   end record;
+   
+   procedure Get(Belopp: out Integer; Val : out String;) is
+      
+      
+   begin
+      Get(Belopp);
+      Get(" ");
+      Get(Val);
+      
+      
+   end Get;
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+begin
+   
+   Put("  ");
+   
+   
+   
+   
+   
+   
+   
+   end Priser;

@@ -1,0 +1,67 @@
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_Io; use Ada.Integer_Text_IO;
+
+
+
+procedure Borttapade_Skor is
+   
+   type Barnens_Skor is array (1..15) of character;
+   
+   procedure Get(Skor : out Barnens_Skor) is
+      
+      Input : Character;
+      Index : Integer:=1;
+   begin
+      
+      loop
+	 Get(Input);
+	 
+	 Skor(index):= Input;
+	 
+	 Index:=Index+1;
+	 exit when Index >15;
+      end loop;
+      
+      
+      
+   end Get;   
+   Skor : Barnens_Skor;
+   Antal_Skor :Integer:=0;
+begin
+   
+   Put("Mata in barens skor: ");
+   Get(Skor); 
+   
+   
+   for I in Skor'Range loop
+      
+      
+      if Skor(I)=('-') then
+	 
+	 Antal_skor:=Antal_Skor+0;
+	 
+      elsif Skor(I)=('v') or Skor(I)=('h') then
+	 
+	 Antal_skor:=Antal_Skor+1;
+	 
+      elsif Skor(I)=('b') then
+	 
+	 Antal_skor:=Antal_Skor+2;	       
+      end if;
+      
+   end loop;
+   
+   New_Line;
+   Put("Det tala antalet skor är ");
+   
+   Put(Antal_Skor,Width=>0);
+   
+   
+   New_Line;
+   for I in Skor'Range loop
+      Put(Skor(I));
+      
+   end loop;
+   
+   
+end Borttapade_Skor;

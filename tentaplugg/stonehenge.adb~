@@ -1,0 +1,96 @@
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+
+procedure Stonehenge is
+   
+  procedure Size(Stenar,Omkrets : in  Integer ; Henge_Size,Rocks_left : in out integer) is
+	
+      
+     
+  begin
+     
+     
+  
+     Rocks_Left:=Rocks_Left-Henge_Size;
+     Henge_size:=Henge_size-4;
+     
+
+    
+     if Rocks_left > 0 then
+      Size(Stenar,Omkrets,Henge_Size,Rocks_left);
+    
+      end if;
+  
+     end Size;
+     
+ procedure  Henge_Print(Stenar,Omkrets : in  Integer ; Henge_Size,Rocks_left2 : in out  integer) is
+     
+ begin 
+     Henge_size:=Henge_Size+4;
+     Put(Henge_size,Width=>0);
+     Put("-henge");
+     Rocks_Left2:=Rocks_Left2-Henge_Size;
+    
+     
+     if Rocks_left2 <= 0 then
+	Put(".");
+     else
+	   Put(" i en ");
+	   Henge_print(Stenar,Omkrets,Henge_Size,Rocks_left2);
+	   
+    
+      end if;
+  
+     end Henge_Print;
+
+     
+
+  
+  procedure Henges(Stenar, omkrets : in Integer) is
+     
+     Henge_Size,Rocks_Left,Rocks_left2 : Integer;
+  begin
+     Henge_Size:=Omkrets;
+     Rocks_Left:=Stenar-4;
+     Rocks_Left2:=Stenar-4;
+     Put("Bygg en ");
+     Size(Stenar,Omkrets,Henge_Size,Rocks_left);
+     Henge_print(Stenar,Omkrets,Henge_Size,Rocks_left2);
+	    
+
+     
+   
+     
+  end Henges;
+  
+   
+   
+   Stenar, Omkrets, Henge : Integer;
+   
+begin
+   Put("Mata in totala antalet stenar: ");
+   Get(Stenar);
+   Put("Mata in maximal omkrets för yttersta henge: ");
+   Get(Omkrets);
+     if Stenar mod 2 = 1 then
+	 Stenar:=(Stenar-1);
+	 end if;
+	 
+	 if Omkrets /= 4 then
+	    if Omkrets mod 2 = 0 then
+	       Omkrets:=Omkrets-2;
+	    else
+	       Omkrets:=Omkrets-1;
+	       if Omkrets /= 4 then
+		  Omkrets:=Omkrets-2;
+	       end if;
+	       
+	    end if;	    
+	 end if;
+      
+      Henges(Stenar,Omkrets);
+   
+   
+   
+   
+end Stonehenge;

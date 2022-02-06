@@ -1,0 +1,77 @@
+V "GNAT Lib v7"
+M P W=b
+P ZX
+
+RN
+RV NO_IO
+RV SPARK_05
+
+U lab4ab%b		lab4ab.adb		b8f7d9f3 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W system.val_int%s	s-valint.adb		s-valint.ali
+
+D ada.ads		20170106103348 76789da1 ada%s
+D a-except.ads		20151016123252 291912d5 ada.exceptions%s
+D a-inteio.ads		20070406091342 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20140225151544 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20141120112812 119b8fb3 ada.streams%s
+D a-tags.ads		20151016130316 01f5e3ef ada.tags%s
+D a-textio.ads		20140717063745 386df5d4 ada.text_io%s
+D a-tiinio.ads		20140717063513 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20170106103348 31484697 ada.unchecked_conversion%s
+D interfac.ads		20160502101001 5ab55268 interfaces%s
+D i-cstrea.ads		20140801100435 e53d8b8e interfaces.c_streams%s
+D lab4ab.adb		20191008143407 76d1a583 lab4ab%b
+D system.ads		20170510173650 4635ec04 system%s
+D s-crtl.ads		20141120112812 0ebbdb71 system.crtl%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-ficobl.ads		20140718105747 078245e4 system.file_control_block%s
+D s-parame.ads		20140801093848 7e2a0d7f system.parameters%s
+D s-soflin.ads		20151020124036 14e1eb6c system.soft_links%s
+D s-stache.ads		20140225151139 a37c21ec system.stack_checking%s
+D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
+D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
+D s-traent.ads		20140730135025 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D s-valint.ads		20090409150019 48a52a3f system.val_int%s
+D s-wchcon.ads		20140718092328 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 12|1r6 1r23 2r6 2r31
+X 3 a-inteio.ads
+18K13*Integer_Text_IO[8|46] 12|2w10 2r35
+X 7 a-textio.ads
+49K13*Text_IO 471e16 12|1w10 1r27
+73I12*Field{integer}
+166U14*New_Line 12|120s4 122s4
+240U14*Get 12|23s10
+242U14*Put 12|39s10 47s10
+X 8 a-tiinio.ads
+66U14*Put 12|38s10[3|18] 41s12[3|18] 46s10[3|18] 50s12[3|18] 53s10[3|18]
+68i7 Width{7|73I12} 12|38r25[3|18] 41r18[3|18] 46r26[3|18] 50r18[3|18] 53r24[3|18]
+X 12 lab4ab.adb
+5U12*Lab4ab 5b12 129l8 129t14
+6a3 Month_Value(integer) 67r28 95r27 102r29
+8R9 Datum_Type 13e17 15r29 33r31 59r41 59r60 61r18 85r45 85r64 87r18 113r21
+10i10 Year{integer} 25m16 38r20 74m22 74r34 101m22 101r34
+11i10 Month{integer} 27m15 40r20 46r20 67r46 68m22 68r35 72r22 75m22 94m22
+. 94r35 95r45 99r24 102m22
+12i10 Day{integer} 29m15 49r19 53r20 65m19 65r30 67r22 69m22 91m19 91r30
+. 93r22 95m22
+15U14 Get 15b14 15<18 30l11 30t14 118s4
+15r18 Datum{8R9} 25m10 27m8 29m9
+17a7 Str{string} 23m14 25r36 27r36 29r34
+33U17 Put 33b17 33>21 56l14 56t17 119s4 121s4 123s4
+33r21 Datum{8R9} 38r14 40r14 46r14 49r13 53r14
+59V19 Next_Date{8R9} 59b19 59>30 83l14 83t23 121s8
+59r30 next{8R9} 63r20
+61r11 Nexta{8R9} 63m13 65m13 65r24 67r16 67r40 68m16 68r29 69m16 72r16 74m16
+. 74r28 75m16 81r20
+85V19 Previous_date{8R9} 85b19 85>34 110l17 110t30 123s8
+85r34 next{8R9} 89r20
+87r11 Nexta{8R9} 89m13 91m13 91r24 93r16 94m16 94r29 95m16 95r39 99r18 101m16
+. 101r28 102m16 108r20
+113r13 Datum{8R9} 118m8 119r8 121r18 123r22
+

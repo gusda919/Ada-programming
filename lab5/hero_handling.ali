@@ -1,0 +1,91 @@
+V "GNAT Lib v7"
+P ZX
+
+RN
+RV NO_FLOATING_POINT
+RV NO_IO
+RV SPARK_05
+
+U hero_handling%b	hero_handling.adb	0ae07bad NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W string_handling%s	string_handling.adb	string_handling.ali
+
+U hero_handling%s	hero_handling.ads	3a0328ed EE NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W string_handling%s	string_handling.adb	string_handling.ali
+
+D ada.ads		20170106103348 76789da1 ada%s
+D a-except.ads		20151016123252 291912d5 ada.exceptions%s
+D a-flteio.ads		20070406091342 e18a47a0 ada.float_text_io%s
+D a-inteio.ads		20070406091342 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20140225151544 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20141120112812 119b8fb3 ada.streams%s
+D a-tags.ads		20151016130316 01f5e3ef ada.tags%s
+D a-textio.ads		20140717063745 386df5d4 ada.text_io%s
+D a-tiflio.ads		20140717063513 56fbda09 ada.text_io.float_io%s
+D a-tiinio.ads		20140717063513 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20170106103348 31484697 ada.unchecked_conversion%s
+D hero_handling.ads	20191126123049 30ad40ab hero_handling%s
+D hero_handling.adb	20191126123249 30e35340 hero_handling%b
+D interfac.ads		20160502101001 5ab55268 interfaces%s
+D i-cstrea.ads		20140801100435 e53d8b8e interfaces.c_streams%s
+D string_handling.ads	20191126175529 25025396 string_handling%s
+D system.ads		20170510173650 4635ec04 system%s
+D s-crtl.ads		20141120112812 0ebbdb71 system.crtl%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-ficobl.ads		20140718105747 078245e4 system.file_control_block%s
+D s-parame.ads		20140801093848 7e2a0d7f system.parameters%s
+D s-soflin.ads		20151020124036 14e1eb6c system.soft_links%s
+D s-stache.ads		20140225151139 a37c21ec system.stack_checking%s
+D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
+D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
+D s-traent.ads		20140730135025 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20140718092328 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 12|1r6 1r27 1r40 2r5 2r26 2r39 13|1r6 1r27 1r40 2r5 2r26 2r39
+X 3 a-flteio.ads
+20K13*Float_Text_IO[9|46] 12|1w44 2r43 13|1w44 2r43
+X 4 a-inteio.ads
+18K13*Integer_Text_IO[10|46] 12|1w10 2r9 13|1w10 2r9
+X 8 a-textio.ads
+49K13*Text_IO 471e16 12|1w31 2r30 13|1w31 2r30
+73I12*Field{integer}
+166U14*New_Line 13|35s7 36s7 41s7 46s7 51s7 56s7 60s7 61s7
+242U14*Put 13|13s7 16s7 19s7 22s7 25s7 34s7 38s7 43s7 48s7 53s7 58s7
+X 9 a-tiflio.ads
+57U14*Get 13|23s7[3|20]
+68U14*Put 13|54s7[3|20]
+70i7 Fore{8|73I12} 13|54r25[3|20]
+71i7 Aft{8|73I12} 13|54r33[3|20]
+72i7 Exp{8|73I12} 13|54r40[3|20]
+X 10 a-tiinio.ads
+56U14*Get 13|17s7[4|18]
+66U14*Put 13|44s7[4|18]
+X 12 hero_handling.ads
+4K9*Hero_Handling 18E10 27l9 27e22 13|5b14 73l5 73t18
+8R9*Hero_Type 10r34 11r33 12r32 18c10 25e17 13|8r34 31r34 65r31
+10U14*Get_hero 10<23 13|8b14 28l8 28t16
+10r23 hero{8R9} 13|8b23 14m11 14r11 17m11 17r11 20m11 20r11 23m11 23r11 26m11
+. 26r11
+11U14*Put_hero 11>23 13|31b14 63l8 63t16
+11r23 hero{8R9} 13|31b24 39r11 44r11 49r11 54r12 59r11
+12V14*Get_Age{integer} 12>22 13|65b13 71l8 71t15
+12r22 hero{8R9} 13|65b21 69r14
+20r10*Name{16|3R9} 13|14m16 39r16
+21i10*Age{integer} 13|17m16 44r16 69r19
+22r10*Gender{16|3R9} 13|20m16 49r16
+23f10*Weight{float} 13|23m16 54r17
+24r10*Haircolor{16|3R9} 13|26m16 59r16
+X 16 string_handling.ads
+1K9*String_Handling 12|1w59 2r58 13|1w59 2r58 16|21e20
+3R9*String_Type 12|20r17 22r19 24r22 16|16e17
+6U14*Get 13|14s7 20s7 26s7
+7U14*Put 13|39s7 49s7 59s7
+

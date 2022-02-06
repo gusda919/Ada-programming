@@ -1,0 +1,16 @@
+with Ada.Text_IO;   use Ada.Text_IO;
+with Ada.Integer.Text_IO;  use Ada_iNteger.Text_IO;
+
+procedure tentaplugg is
+   
+   
+   
+begin
+   
+   
+   
+   
+   
+   
+   
+   end tentaplugg

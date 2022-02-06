@@ -1,0 +1,119 @@
+V "GNAT Lib v7"
+P ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_EXCEPTIONS
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_ALLOCATORS
+RV NO_RECURSION
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_DEALLOCATION
+RV NO_DEFAULT_INITIALIZATION
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U sorted_hero_list%b	sorted_hero_list.adb	b1bd1944 NE OO PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+
+U sorted_hero_list%s	sorted_hero_list.ads	66517660 EE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.unchecked_deallocation%s
+W hero_handling%s	hero_handling.adb	hero_handling.ali
+W system%s		system.ads		system.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+D ada.ads		20170106103348 76789da1 ada%s
+D a-except.ads		20151016123252 291912d5 ada.exceptions%s
+D a-flteio.ads		20070406091342 e18a47a0 ada.float_text_io%s
+D a-inteio.ads		20070406091342 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20140225151544 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20141120112812 119b8fb3 ada.streams%s
+D a-tags.ads		20151016130316 01f5e3ef ada.tags%s
+D a-textio.ads		20140717063745 386df5d4 ada.text_io%s
+D a-tiflio.ads		20140717063513 56fbda09 ada.text_io.float_io%s
+D a-tiinio.ads		20140717063513 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20170106103348 31484697 ada.unchecked_conversion%s
+D a-uncdea.ads		20070406091342 f15a5ed1 ada.unchecked_deallocation%s
+D hero_handling.ads	20191126123049 30ad40ab hero_handling%s
+D interfac.ads		20160502101001 5ab55268 interfaces%s
+D i-cstrea.ads		20140801100435 e53d8b8e interfaces.c_streams%s
+D sorted_hero_list.ads	20191126121638 a7a6681a sorted_hero_list%s
+D sorted_hero_list.adb	20191126122531 161b715e sorted_hero_list%b
+D string_handling.ads	20191126175529 25025396 string_handling%s
+D system.ads		20170510173650 4635ec04 system%s
+D s-crtl.ads		20141120112812 0ebbdb71 system.crtl%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-ficobl.ads		20140718105747 078245e4 system.file_control_block%s
+D s-parame.ads		20140801093848 7e2a0d7f system.parameters%s
+D s-soflin.ads		20151020124036 14e1eb6c system.soft_links%s
+D s-stache.ads		20140225151139 a37c21ec system.stack_checking%s
+D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
+D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
+D s-traent.ads		20140730135025 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20140718092328 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 16|2r6 17|3r36
+X 12 a-uncdea.ads
+20u15*Unchecked_Deallocation 16|2w10 17|3r40
+X 13 hero_handling.ads
+4K9*Hero_Handling 27e22 16|3w6 3r25
+8R9*Hero_Type 25e17 16|21r58 22r51 34r13 17|6r58 24r48
+11U14*Put_hero 17|63s16 67s19
+12V14*Get_Age{integer} 17|31s11 31s28 85s18 108s22 158s22 159s29
+X 16 sorted_hero_list.ads
+8K9*Sorted_Hero_list 29E9 39l8 39e24 17|1b14 202l20 202t36
+11P9*Pekare 16r26 17r27 18r29 19r28 21r39 22r32 23r33 24r32 25r34 26r26 30c9
+. 35r13 17|3r77 6r39 7r11 24r29 38r29 53r41 77r28 79r19 98r45 101r21 120r43
+. 122r23 147r40 168r43 170r29 185r40
+14X4*Wrong_Input 17|105r25 130r28 155r25
+16V13*Empty{boolean} 16>19 17|38b16 50l14 50t19 84s20 104s19 107s19 129s22
+. 132s28 153s27 191s29
+16p19 p{11P9} 17|38b22 43r12
+17V13*Member{boolean} 17>20 17>35 17|77b14 89s31 95l17 95t23
+17p20 p{11P9} 17|77b21 79r27 85r26 89r38
+17i35 Nyckel{integer} 17|77b37 85r36 89r45
+18V13*Find{integer} 18=18 18=38 17|147b24 161s35 165l17 165t21 178s26
+18p18 p{11P9} 17|147b29 153r33 158r30 159r37 161r40
+18i38 Nyckel{integer} 17|147b49 158r40 161m47 161r47
+19V13*Length{integer} 19>21 17|185b25 193s29 199l20 199t26
+19p21 p{11P9} 17|185b33 191r35 193r36
+21U14*Insert_First 21=28 21>48 17|6b15 21l5 21t17 29s8 32s8
+21p28 P{11P9} 17|6b28 10r8 11m7 12r7 13r7 17r18 19m7
+21r48 hero{13|8R9} 17|6b48 12r15 16r18
+22U14*Insert 22=21 22>41 17|24b11 34s8 36l9 36t15
+22p21 P{11P9} 17|24b18 28r9 29m21 31r36 32m21 34r15
+22r41 hero{13|8R9} 17|24b38 29r23 31r19 32r23 34r22
+23U14*Remove 23=22 23>41 17|98b26 115s19 118l17 118t23
+23p22 P{11P9} 17|98b34 104r25 107r25 108r30 109r28 110m22 115r26
+23i41 Nyckel{integer} 17|98b53 108r40 115r34
+24U14*Delete 24=21 17|120b25 137s24 142l17 142t23
+24p21 P{11P9} 17|120b32 126r19 129r28 132r34 133r30 135m24 137m31 141m36
+25U14*Put_List 25>23 17|53b20 69s13 74l14 74t22
+25p23 lista{11P9} 17|53b29 59r14 62r16 63r25 67r28 69r22
+26U14*Find 26>19 26>34 26<55 17|168b31 181l17 181t21
+26p19 P{11P9} 17|168b36 174r28
+26i34 Nyckel{integer} 17|168b51 175r23
+26i55 Found_It{integer} 17|168b71 178m16
+29R9 Element_Type 30r26 32c9 36e14 17|3r63 11r15 15r18
+34r7*Data{13|8R9} 17|12m9 16m12 31r38 63r31 67r34 85r28 108r32 158r32 159r39
+35p7*Next{11P9} 17|13m9 17m12 34m17 62r22 69r28 89r40 110r30 115m28 133r32
+. 161m42 193r38
+X 17 sorted_hero_list.adb
+3U14 Release_memory[12|20] 111s22 134s24 141s21
+7p4 Temp{16|11P9} 15m7 16r7 17r7 19r10
+79p13 Temp{16|11P9} 84r26
+80b13 Found_variable{boolean} 89m15 92r20
+101p14 Temp{16|11P9} 109m22 110r25 111m37 111r37
+122p16 Temp{16|11P9} 133m24 134m39 134r39 135r27
+149b16 No_Value{boolean} 153m17 154r19 157r23
+150i16 Found_Variable{integer} 161m19 163r23
+170p16 Index_post{16|11P9} 174m16 178m31 178r31
+171i16 index{integer} 175m16 178m42 178r42
+187b18 No_value{boolean} 191m19 192r26
+188i18 Index{integer} 193m22 194m22 194r29 197r26
+

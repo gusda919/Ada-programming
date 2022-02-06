@@ -1,0 +1,157 @@
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Sequential_IO;
+
+procedure Interest is
+   
+   
+   
+   type Input_Array is array (1..11) of Integer;
+   type Interest_type is array(1..10) of Integer;
+   
+   type  Person_type is
+      record
+Last_Name : String (1..20);
+First_Name : String (1..20);
+Street_Adress : String (1..20);
+Postal_Code : String (1..20);
+Interest_amount : Integer;
+Interest : Interest_Type;
+      end record;
+   
+   
+   ---------------------------------------------------------------------  
+   procedure Put (Interest : in Interest_Type) is
+   begin
+      for I in Interest'Range loop
+Put(Interest(I));
+      end loop;
+   end Put;
+   
+   ----------------------------------------------------------------------
+   
+   procedure Compare (Interest : in Interest_Type; Person : in Person_type; Count : in Integer; Out_Fil : in Ada.Text_Io.File_Type) is
+     
+      Person_Match : Interest_Type := Person.Interest;
+      Found : Boolean := False;
+   begin
+     
+      for I in Interest'Range loop
+for K in 1..Count loop
+   if Interest(I) = Person_Match(K) then
+      Found := True;
+      exit;
+   end if;
+end loop;
+      end loop;
+     
+      if Found then
+Put_Line(Out_Fil, "------------------------------------------------------------------------------------------------------------------");
+New_Line;
+Put(Out_Fil, Person.Last_Name);
+Put(Out_Fil, Person.First_Name);
+Put(Out_Fil, Person.Street_Adress);
+Put(Out_Fil, Person.Postal_Code);
+Put(Out_Fil, "***");
+for I in Interest'Range loop
+   for K in 1..Count loop
+      if Interest(I) = Person_Match (K) then
+ Put(Out_Fil, Person_Match(K), 3);
+      end if;
+   end loop;
+end loop;
+
+New_Line(Out_Fil);
+
+      end if;
+     
+   end Compare;
+   
+   ------------------------------------------------------------------------
+   
+   function Member (Interest : in Interest_type; Input : in Integer) return Boolean is
+   begin
+     
+      for I in Interest'Range loop
+if Interest(I) = Input then
+   return False;
+end if;
+      end loop;
+      return True;
+     
+   end Member;
+   
+   ------------------------------------------------------------------------
+   
+   procedure Count (Interest : in out Interest_Type; Counter : out Integer) is
+     
+      Input : Integer;
+     
+   begin
+      Counter := 0;
+     
+      while Index <= 10 loop
+Get(Input);
+while True loop
+if Input > 15 or Input < 0 then
+   Put("intressen måste vara mellan 1-15");
+   Get(Input);
+else
+   exit;
+end if;
+end loop;
+New_Line;
+if Input = 0 then
+   Put("Resulterande indata: ");
+   for I in 1..index loop
+      Put(Interest(I), 3);
+   end loop;
+   exit;
+else
+   if Member(Interest, Input) then
+      Counter := Counter + 1;
+      Interest(Counter) := Input;
+   end if;
+end if;
+      end loop;
+   end Count;
+   
+   -----------------------------------------------------------------------
+   
+   package My_Io is new Ada.Sequential_Io (Person_Type);
+   use My_Io;
+   
+   
+
+     
+      My_File : My_Io.File_Type;
+      Out_fil : Ada.Text_Io.File_Type;
+      Person : Person_Type;
+      Interest : Interest_Type;
+      Counter : Integer;
+
+     
+begin
+   
+   Put_Line("Ange en följd av intressen 1 till 15, max 10 st. Avsluta med 0: ");
+   Count(Interest, Counter);
+   New_Line;
+   My_Io.Open(My_File, In_File, "REG.BIN");
+   Create(Out_Fil, Out_File, "Result.txt");
+   
+   while not End_Of_File (My_File) loop
+      Read(My_File, Person);
+      Compare(Interest, Person, Counter, Out_Fil);
+     
+   end loop;
+   
+   Put_Line(Out_Fil,"----------------------------------------------------------------------------------------------------");
+   
+   Close(Out_Fil);
+   New_Line;
+   
+   Put("KLART! Resultat på filen RESULT.TXT ");
+   
+   
+   
+end Interest;

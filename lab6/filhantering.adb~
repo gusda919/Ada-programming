@@ -1,0 +1,194 @@
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Sequential_IO;
+
+procedure Filhantering is
+   
+   
+   -- Vi måste max ta in 10 intressen + 0. Varför går fler in?
+   type Input_Array_Type is array(1..11) of Integer;
+   
+   -- Antal intressen
+   type Interest_Array_Type is array(1..10) of Integer;
+   
+   type Person_Record_Type is
+      record
+	 Surname: String(1..20) := (others => ' ');
+	 Name: String(1..20):= (others => ' ');
+	 Address: String(1..20):= (others => ' ');
+	 Postaddress: String(1..20):= (others => ' ');
+	 InterestCount: Integer;
+	 Interests: Interest_Array_Type;
+      end record;
+   
+   package Seq_IO is new Ada.Sequential_IO(Person_Record_Type); -- initialiserar ett paket som ska läsa av person_record_type
+   
+
+   function Without_Space(Input_String: in String) return String is -- funktion för att ta bort blanksteg
+      
+      function Reversee(Item: in String) return String is -- delfunktion som vänder på strängen så att blanksteg hamnar först
+	 Result: String(Item'Range);
+      begin
+	 for I in Item'Range loop -- Strängens range, dvs exempelvis 1..20
+	    Result(Result'First - I+Item'Last) := Item(I); -- 1-21 = 20 , 19, 18, 17, 16
+							   -- 'Last betyder längden.
+	 end loop;
+	 
+	 return Result; -- Returnera vår nya omvända string
+      end Reversee;
+      
+      function Remove_Space(Item: in String) return String is
+      begin
+	 if Item'Length = 0 then -- slutar loopen när vi returnat en sträng och det finns inget kvar.
+	    return "";
+	 elsif Item(Item'First) /= ' ' then -- om vi inte har space så returnar vi strängen. Inkl. ev space mellan "gata" och gatunr.
+	    return Item(Item'Range);
+	 elsif Item(Item'First) = ' ' then -- om det är space så kör vi rekursion med sträng med andra som ny "first" och till last.
+	    return Remove_Space(Item(Item'First+1..Item'Last));
+	 else
+	    return Item(Item'First) & Remove_Space(Item(Item'First+1..Item'Last)); 
+	 end if;
+      end Remove_Space;
+      
+   begin
+      
+      return Reversee(Remove_Space(Reversee(Input_String(Input_String'Range)))); --omvänd reverse utan space i den längd strängen"blev"
+      
+   end Without_Space;
+   
+   function Member(Array_Input: in Input_Array_Type; Integer_Input: in Integer) return Boolean is
+   begin
+      
+      for I in Input_Array_Type'Range loop -- Loopa allt vi har Get:at. (1..16)
+	 if Array_Input(I) = Integer_Input then -- Om Arrayen matchar vår söknyckel (Integer_Input)
+	    return true; -- Om den inte matchade, return false
+	 end if;
+      end loop;
+      
+      return false; -- Om den matchade, return true
+   end Member;
+
+   SyGytt_File : Seq_IO.File_Type;
+   Result_File : File_Type;
+   Person_Record : Person_Record_Type;
+   Input_Array : Input_Array_Type;
+   Input_Counter: Integer := 2; -- Börja räkna från 2 för vår Input_Array för vi tar in första värdet
+   iLastValue, ISecondLastValue, Integer_Input : Integer := 0;
+   bPrint : Boolean := False;
+begin
+   
+   Put_Line("Ange en följd av intressen 1 till 15, max 10 st. Avsluta med 0: ");
+   Get(Input_Array(1)); -- Ta in första värdet. Av 1 2 3 4 5 0, tar vi in endast 1 
+   
+   --Loopa igenom resterande av vår input, alltså av 1 2 3 4 5 6 0, tar vi in enbart 2 3 4 5 0.
+   loop -- Loopa för att vi inte vet hur mycket input vi får. 
+      
+      Get(Integer_Input); -- Ta in integer, EN och EN, detta är inte en array ------ VARFÖR GETTAR VI INTE SIFFRAN 2?????????
+      
+      if Integer_Input > 0 and Integer_Input < 16 then
+	 if not Member(Input_Array, Integer_Input) then -- Om vår integer_input matchar User_Input
+	    Input_Array(Input_Counter) := Integer_Input; -- Spara till vår Input_Array
+	    Input_Counter := Input_Counter + 1; -- 2 + 1
+	 end if;
+      end if;
+      
+      
+      exit when Integer_Input = 0; -- När vi hittar 0, slutar loopen.
+      
+   end loop;
+   
+   -- Vår input är sorterad. Alltså användarens input.
+   Put("KLART! Resultat på filen RESULT.TXT");
+   Seq_IO.Open(File=>SyGytt_File, Mode=>Seq_IO.In_File, Name=>"REG.BIN"); -- Öppna SyGytt_File (REG.BIN)
+   Open(Result_File, Out_File, "RESULT.TXT"); -- Öppna Result_File (RESULT.TXT)
+   
+   New_Line;
+   
+   -- Nu är det dags att loopa REG.BIN (Tree_File)
+   while not Seq_IO.End_Of_File(SyGytt_File) loop
+      Seq_IO.Read(SyGytt_File, Person_Record); -- Read SyGytt data (Sy Gytt!)
+      
+      for A in 1..Input_Counter loop -- Antal matchande integers
+	 for B in 1..Person_Record.InterestCount loop -- antal intressen
+	    if Input_Array(A) = Person_Record.Interests(B) then -- Vi printar ut alla med överensstämmande intressen (bPrint) 
+	       bPrint := True; 
+	    end if;
+	 end loop;
+      end loop;
+      
+      if bPrint then -- De som har intressen som överensstämmer med input
+	 
+	 for I in 1..60 loop
+	    Put('-'); -- terminal
+	    Put(Result_File, '-'); -- fil (strecken mellan)
+	 end loop;
+	 
+	 New_Line(Result_File);
+	 New_Line;
+	 
+	 -- Namn
+	 Put(Result_File, Without_Space(Person_Record.Name)); -- put i filen
+	 Put(Without_Space(Person_Record.Name)); -- put namn i terminal
+	 Put(Result_File, ' ');
+	 Put(' ');
+	 
+	 -- Efternamn
+	 Put(Result_File, Without_Space(Person_Record.Surname)); -- -||-
+	 Put(Without_Space(Person_Record.Surname)); 
+	 Put(Result_File, ' ');
+	 Put(' ');
+	 
+	 -- Adress
+	 Put(Result_File, Without_Space(Person_Record.Address));
+	 Put(Without_Space(Person_Record.Address));
+	 Put(Result_File, ' ');
+	 Put(' ');
+	 
+	 -- Ort
+	 Put(Result_File, Without_Space(Person_Record.Postaddress));
+	 Put(Without_Space(Person_Record.Postaddress));
+	 Put(Result_File, ' ');
+	 Put(' ');
+	 
+	 Put(Result_File, "***"); -- puttar stjärnor som avslutar postern
+	 Put("***");
+	 
+	 Put(Result_File, " Intressen: "); -- filen
+	 Put(" Intressen: "); --terminalen 
+	 
+	 for A in 1..Input_Counter loop -- antal intressen 
+	    
+	    for B in 1..Person_Record.InterestCount loop -- vilka intressen
+	       
+	       if Person_Record.Interests(B) = Input_Array(A) then -- puttar ut intressen som överensstämmer
+		  
+		  if Person_Record.Interests(B) /= iLastValue and Person_Record.Interests(B) /= iSecondLastValue then -- ?! Fick hjälp av en men vill ha ytterligare förklaring
+		     Put(Result_File, Person_Record.Interests(B), 0); -- fil
+		     Put(Person_Record.Interests(B), 0); --terminal
+		     Put(Result_File, ' ');
+		     Put(' ');
+		  end if;
+		  
+		  iSecondLastValue := iLastValue;
+		  iLastValue := Person_Record.Interests(B); -- De sista looparna puttar ut vilka intressen som ska vara med
+		  
+	       end if;
+	    end loop;
+	 end loop;
+	 
+	 iLastValue := 0;
+	 iSecondLastValue := 0;
+	 New_Line(Result_File);
+	 New_Line;
+	 bPrint := False;
+	 
+      end if;
+      
+   end loop;
+   New_Line;
+   Put("Sy Gytt! Sista ADA-labben klar!");
+   New_Line(2);
+   Close(Result_File); -- stänger skapade filen
+   Seq_IO.Close(SyGytt_File); -- stänger filen vi läst (Sy Gytt!)
+   
+end Filhantering;
